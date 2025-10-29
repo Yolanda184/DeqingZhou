@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周德青 - 个人网站</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2980b9;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --text-color: #333;
+            --light-text: #f8f9fa;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* 导航栏 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* 首页 */
+        #home {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        #home h2 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--light-color);
+        }
+        
+        #home h2::after {
+            display: none;
+        }
+        
+        #home p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* 基本信息 */
+        .basic-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .info-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* 教育背景 */
+        .education {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .edu-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .edu-period {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .edu-school {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .edu-major {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        /* 学术成果 */
+        .publications {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .pub-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .pub-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .pub-journal {
+            color: var(--dark-color);
+            font-style: italic;
+        }
+        
+        /* 科研项目 */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-period {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* 获奖情况 */
+        .awards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .award-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .award-year {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* 个人技能 */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* 硕士论文 */
+        .thesis-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .research-item {
+            margin-bottom: 30px;
+        }
+        
+        .research-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            #home h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">周德青</div>
+                <ul class="nav-links">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#education">教育背景</a></li>
+                    <li><a href="#publications">学术成果</a></li>
+                    <li><a href="#projects">科研项目</a></li>
+                    <li><a href="#awards">获奖情况</a></li>
+                    <li><a href="#skills">个人技能</a></li>
+                    <li><a href="#thesis">硕士论文</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页 -->
+    <section id="home">
+        <div class="container">
+            <h1>周德青</h1>
+            <h2>教育技术学硕士研究生</h2>
+            <p>专注于教育技术、数据驱动的教育评价、人工智能教育应用等领域的研究与实践</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>18482031595</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>2457709305@qq.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>四川达州</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 基本信息 -->
+    <section id="basic-info">
+        <div class="container">
+            <h2>基本信息</h2>
+            <div class="basic-info">
+                <div class="info-card">
+                    <h3>个人信息</h3>
+                    <p><strong>出生年月：</strong>1996.08</p>
+                    <p><strong>籍贯：</strong>四川达州</p>
+                    <p><strong>政治面貌：</strong>共青团员</p>
+                </div>
+                <div class="info-card">
+                    <h3>教育信息</h3>
+                    <p><strong>导师：</strong>杨现民</p>
+                    <p><strong>现任职务：</strong>院研究生会副主席</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section id="education">
+        <div class="container">
+            <h2>教育背景</h2>
+            <div class="education">
+                <div class="edu-item">
+                    <div class="edu-period">2019.09-2022.06</div>
+                    <div class="edu-school">江苏师范大学</div>
+                    <div class="edu-major">教育技术学 硕士研究生</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-period">2015.09-2019.06</div>
+                    <div class="edu-school">四川师范大学</div>
+                    <div class="edu-major">教育技术学 本科</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学术成果 -->
+    <section id="publications">
+        <div class="container">
+            <h2>学术成果</h2>
+            <div class="publications">
+                <div class="pub-item">
+                    <div class="pub-title">周德青, 杨现民, 李新.在线开放课程的学习者评价数据分析框架研究——以"中小学教师数据素养"在线开放课程为例[J].现代教育技术, 2021, 31(08). (CSSCI)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">王东丽, 周德青, 王亚如, 杨现民.中小学人工智能教材综述——基于 45 本已出版教材的分析[J].现代教育技术, 2021, 31(02). (CSSCI)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">张瑶, 杨现民, 周德青.国内教育治理研究:主题变与前沿趋势[J].现代教育技术, 2021, 31(11):20-27. (CSSCI)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科研项目 -->
+    <section id="projects">
+        <div class="container">
+            <h2>科研项目</h2>
+            <div class="projects">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <div class="project-period">2021.05 至今</div>
+                    <div class="project-title">核心参与中国教育装备行业蓝皮书（2021 版）项目</div>
+                    <p>主要工作：调研教育信息化研究的新装备、新应用；负责撰写《教育信息化 2020 年度发展报告》中"五、教育信息化装备的研制与应用"，从德育、智育、体育、美育、劳育五方面阐述教育装备信息化的新进展。</p>
+                </div>
+                
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <div class="project-period">2021.04 至今</div>
+                    <div class="project-title">核心参与徐州市第三十四中学人工智能课程建设项目</div>
+                    <p>主要工作：调研中小学人工智能教材；梳理初中人工智能教育的知识点、能力点和素养点；负责撰写《初中人工智能教材》中"第六章 自然语言处理技术"。</p>
+                </div>
+                
+                <!-- 项目3 -->
+                <div class="project-card">
+                    <div class="project-period">2020.11 至今</div>
+                    <div class="project-title">核心参与中国基础教育大数据发展蓝皮书（2020-2021）项目</div>
+                    <p>主要工作：调研、分析中国科技成就相关政策；负责撰写第二章 2.3 中国科技成就政策分析、第三章 3.2 规模化因材施教面临的突出问题以及《智能时代大规模因材施教：政策分析、现实挑战与路径优化》文章。</p>
+                </div>
+                
+                <!-- 项目4 -->
+                <div class="project-card">
+                    <div class="project-period">2020.07-2020.10</div>
+                    <div class="project-title">参与中国基础教育大数据发展蓝皮书（2018-2019）项目</div>
+                    <p>主要工作：调研、整理"附录 1 中国教育大数据重要事件"；参与撰写《中国基础教育大数据发展蓝皮书（2018-2019）》中"4.5 数据驱动教育公共服务供给""4.6 数据驱动教育管理事务—网通办"。</p>
+                </div>
+                
+                <!-- 项目5 -->
+                <div class="project-card">
+                    <div class="project-period">2020.05-2020.09</div>
+                    <div class="project-title">参与中国教育装备行业蓝皮书（2020 版）项目</div>
+                    <p>主要工作：调研 2019 年教育信息化研究的新课题、新成果、新技术、新装备；撰写《2019 年教育信息化发展分析》中"四、教育信息化研究新课题、新理论及新成果""五、教育信息化新技术、新装备的建设与应用"。</p>
+                </div>
+                
+                <!-- 项目6 -->
+                <div class="project-card">
+                    <div class="project-period">2020.04 至今</div>
+                    <div class="project-title">主持《基于学习过程数据的在线课程质量评价及优化研究》江苏省研究生科研创新项目</div>
+                    <p>主要工作：调研学习过程数据的内涵、类别；调研在线课程质量评价的指标、方法、技术等；并以《在线开放课程的学习者评价数据分析框架研究——以"中小学教师数据素养"在线开放课程为例》一文顺利结束。</p>
+                </div>
+                
+                <!-- 项目7 -->
+                <div class="project-card">
+                    <div class="project-period">2020.03-2020.06</div>
+                    <div class="project-title">核心参与徐州市基础教育大数据项目</div>
+                    <p>主要工作：撰写徐州市中小学教师数据素养现状调研报告；调研大数据相关的国家标准和团体标准、大数据技术参考模型；主持研制、撰写《徐州市教育大数据基础框架标准》。</p>
+                </div>
+                
+                <!-- 项目8 -->
+                <div class="project-card">
+                    <div class="project-period">2019.11-2020.01</div>
+                    <div class="project-title">核心参与青少年编程技术、青少年机器人技术等级教育规范项目</div>
+                    <p>主要工作：调研青少年机器人技术、编程能力等级考试标准；研讨、确定青少年编程教育、机器人教育的知识大纲；作为主要起草人参与撰写《青少年编程技术等级教育规范》、《青少年机器人技术等级教育规范》。</p>
+                </div>
+                
+                <!-- 项目9 -->
+                <div class="project-card">
+                    <div class="project-period">2019.09 至今</div>
+                    <div class="project-title">核心参与中国大学 MOOC《中小学教师数据素养》项目</div>
+                    <p>主要工作：制作微课；担任课程助教，参与课程的管理与运营，为学习者提供学习支持服务。</p>
+                </div>
+                
+                <!-- 项目10 -->
+                <div class="project-card">
+                    <div class="project-period">2016.10-2017.04</div>
+                    <div class="project-title">主持《具有 USB 接口的温度记录仪》计算机科学学院大学生科研创新项目</div>
+                    <p>主要工作：实现 51 单片机与温湿度传感器的串口通信；编写显示温湿度的可视化窗口。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 获奖情况 -->
+    <section id="awards">
+        <div class="container">
+            <h2>获奖情况</h2>
+            <div class="awards">
+                <!-- 获奖项 -->
+                <div class="award-item">
+                    <div class="award-year">2021年</div>
+                    <p>第二十届教育技术国际论坛最佳论文</p>
+                    <p>iTeach全国大学生数字化教育应用创新作品展示活动三等奖</p>
+                    <p>校级"二等研究生学业奖学金"</p>
+                    <p>校级"优秀研究生"称号</p>
+                    <p>院级"优秀研究生干部"称号</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-year">2020年</div>
+                    <p>校级"二等研究生学业奖学金"</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-year">2019年</div>
+                    <p>全国大学生英语六级（CET-6）</p>
+                    <p>校级"二等研究生学业奖学金"</p>
+                    <p>第三届iTeach全国大学生数字化教育应用创新大赛三等奖</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-year">2018年</div>
+                    <p>第二届iTeach全国大学生数字化教育应用创新大赛一等奖</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-year">2017年</div>
+                    <p>校级"学习优秀二等奖学金"（全校学生5%）</p>
+                    <p>校级"三好学生"称号（全校学生3%）</p>
+                    <p>校级2次"优秀学生干部"称号（全校学生5%）</p>
+                    <p>校级2次"社会工作奖学金"</p>
+                    <p>国家励志奖学金（全校学生3%）</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-year">2016年</div>
+                    <p>全国大学生英语四级（CET-4）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 个人技能 -->
+    <section id="skills">
+        <div class="container">
+            <h2>个人技能</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3>设计软件</h3>
+                    <ul class="skill-list">
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Adobe After Effects</li>
+                        <li>Adobe Audition</li>
+                        <li>CorelDRAW</li>
+                        <li>Flash</li>
+                        <li>Maya</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>数据分析工具</h3>
+                    <ul class="skill-list">
+                        <li>SPSS Statistics</li>
+                        <li>Jupyter Notebook</li>
+                        <li>Sql server 2008</li>
+                        <li>Citespace</li>
+                        <li>UCINET</li>
+                        <li>ROST CM6</li>
+                        <li>八爪鱼采集器</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>编程与开发</h3>
+                    <ul class="skill-list">
+                        <li>Scratch</li>
+                        <li>APP Inventer</li>
+                        <li>Unity3D</li>
+                        <li>Eclipse</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 硕士论文 -->
+    <section id="thesis">
+        <div class="container">
+            <h2>硕士论文</h2>
+            <div class="thesis-content">
+                <h3>论文题目：基于学习过程数据的在线开放课程质量评价研究</h3>
+                
+                <div class="research-item">
+                    <h3>研究内容：</h3>
+                    <p><strong>1. 基于学习过程数据的在线开放课程质量评价基础框架构建</strong></p>
+                    <p>构建基于学习过程数据的在线开放课程质量评价基础框架旨在更好地指导在线开放课程质量评价指标体系的设计与实践。研究从理论角度分析评价在线开放课程质量的所需注意的因素与关键点，梳理开展在线开放课程质量评价的基本条件，剖析基于学习过程数据评价在线开放课程的技术、机制、环境，为后续评价在线开放课程质量提供可信有力的理论支撑框架。研究主要涉及用户体验理论和证据中心理论，结合各理论的主要观点，关注学习者自身感受和学习需求，基于多元数据的驱动，新一代智能技术的支持，构建基于学习过程数据的在线开放课程质量评价的基础框架。该框架包含学习过程数据采集、学习过程数据映射、学习过程数据分析以及课程质量层次计算四大系统，包含数据生成、数据采集、数据输入、数据映射、数据预处理、数据分析、结果输出、策略提出八大数据运行环节。</p>
+                </div>
+                
+                <div class="research-item">
+                    <p><strong>2. 基于学习过程数据的在线开放课程质量评价指标体系设计</strong></p>
+                    <p>研究基于学习过程数据的在线开放课程质量评价基础框架的指导，借鉴在线学习评价指标体系研究与数据驱动的远程学习学习投入评价、网络环境下有效学习评价等研究，根据以学习者为中心、重视课程学习体验、关注课程学习过程三个指标体系构建原则，初步设计了包含认知、行为、情感三个层次的基于学习过程数据的在线课程质量评价指标体系，并运用层次分析法确定各级指标权重。</p>
+                </div>
+                
+                <div class="research-item">
+                    <p><strong>3. 基于学习过程数据的在线开放课程质量评价实践与效果分析</strong></p>
+                    <p>研究选取江苏师范大学杨明民教授主持开设的在线开放课程——"中小学教师数据素养"（案例课程）为实践对象，来探究基于学习过程数据的在线开放课程质量评价框架与指标的可信性与实施效果。首先，将案例课程第一期中学生的学习者学习过程数据应用于基于学习过程数据的在线开放课程质量评价基础框架和指标体系；其次，根据运行效果，针对性的提出在线开放课程质量提升策略，最后，根据运行效果修正基础框架。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2023 周德青 - 个人网站</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>18482031595</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>2457709305@qq.com</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏切换
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // 关闭移动端菜单当点击链接
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // 滚动时添加导航栏阴影
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
