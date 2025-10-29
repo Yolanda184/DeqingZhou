@@ -3,20 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>周德青 - 教育技术学博士</title>
+    <title>周德青 - 教育技术学博士 - 个人简历</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 全局样式 */
-        :root {
-            --primary-green: #2e7d32;
-            --light-green: #4caf50;
-            --dark-green: #1b5e20;
-            --background: #f1f8e9;
-            --card-bg: #ffffff;
-            --text-dark: #263238;
-            --text-light: #546e7a;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -25,496 +14,303 @@
         }
         
         body {
-            background-color: var(--background);
-            color: var(--text-dark);
+            background-color: #f5f5f5;
+            color: #333;
             line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
+            padding: 20px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
         }
         
-        section {
-            padding: 40px 0;
-        }
-        
-        h1, h2, h3 {
-            color: var(--dark-green);
-            margin-bottom: 15px;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--light-green);
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-        }
-        
-        /* 导航栏 */
         header {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 25px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-        
-        /* 首页区域 */
-        #home {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            color: white;
-            padding: 80px 0;
             text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
         }
         
-        #home h1 {
-            font-size: 2.5rem;
-            color: white;
-            margin-bottom: 10px;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #2c3e50;
         }
         
-        #home h2 {
-            font-size: 1.3rem;
-            color: #e8f5e9;
-            border: none;
-            margin-bottom: 20px;
+        .subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
         }
         
         .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
+            margin-bottom: 10px;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
         }
         
-        /* 卡片样式 */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--light-green);
+        .contact-info a:hover {
+            text-decoration: underline;
         }
         
-        /* 教育经历 */
-        .education-item {
+        .address {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        nav {
+            margin: 20px 0;
+        }
+        
+        nav a {
+            margin: 0 10px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        section {
+            background-color: white;
+            padding: 25px;
             margin-bottom: 25px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        .edu-period {
-            color: var(--primary-green);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .edu-school {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        /* 科研成果 */
-        .publication-item {
+        h2 {
+            font-size: 22px;
+            color: #2c3e50;
             margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
         }
         
-        .publication-item:last-child {
-            border-bottom: none;
+        ul {
+            padding-left: 20px;
         }
         
-        .pub-title {
-            font-weight: 600;
-            margin-bottom: 5px;
+        li {
+            margin-bottom: 10px;
         }
         
-        .pub-details {
-            color: var(--text-light);
-            font-size: 0.9rem;
+        .news-item {
+            margin-bottom: 12px;
         }
         
-        /* 科研项目 */
-        .project-item {
+        .news-date {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .experience-item {
             margin-bottom: 15px;
         }
         
-        .project-title {
-            font-weight: 600;
-            margin-bottom: 5px;
+        .experience-date {
+            font-weight: bold;
+            color: #2c3e50;
         }
         
-        /* 获奖情况 */
-        .award-item {
-            display: flex;
-            margin-bottom: 15px;
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
         }
         
-        .award-year {
-            min-width: 80px;
-            color: var(--primary-green);
-            font-weight: 600;
-        }
-        
-        /* 学术报告 */
-        .presentation-item {
-            margin-bottom: 15px;
-        }
-        
-        .presentation-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .presentation-details {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        /* 页脚 */
         footer {
-            background-color: var(--dark-green);
-            color: white;
-            padding: 30px 0;
             text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            #home h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        
-        /* 网格布局 */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-        }
-        
-        @media (max-width: 992px) {
-            .grid-3 {
-                grid-template-columns: 1fr 1fr;
-            }
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 14px;
         }
         
         @media (max-width: 768px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
+            body {
+                padding: 10px;
+            }
+            
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            section {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">周德青</div>
-                <ul class="nav-links">
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#education">教育背景</a></li>
-                    <li><a href="#publications">科研成果</a></li>
-                    <li><a href="#projects">科研项目</a></li>
-                    <li><a href="#awards">获奖荣誉</a></li>
-                    <li><a href="#presentations">学术报告</a></li>
-                </ul>
-            </nav>
+        <h1>周德青（博士研究生）</h1>
+        <div class="subtitle">华南师范大学（教育人工智能研究院）</div>
+        
+        <div class="contact-info">
+            E-mail: Dqzhou814@163.com  
+            [Google Scholar] [GitHub]
         </div>
+        
+        <div class="address">
+            <strong>地址：广东省广州市中山大道西55号，华南师范大学教育人工智能研究院，邮编：510631</strong>
+        </div>
+        
+        <nav>
+            <a href="#personal">个人简介</a> | 
+            <a href="#news">最新消息</a> | 
+            <a href="#education">教育经历</a> | 
+            <a href="#research">科研成果</a> | 
+            <a href="#projects">科研项目</a> | 
+            <a href="#awards">荣誉获奖</a> | 
+            <a href="#presentations">学术报告</a>
+        </nav>
     </header>
 
-    <!-- 首页 -->
-    <section id="home">
-        <div class="container">
-            <h1>周德青</h1>
-            <h2>教育技术学博士研究生</h2>
-            <p>专注于教育人工智能应用、现代远程教育、教育大数据等领域的研究与实践</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Dqzhou814@163.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>四川 成都</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>华南师范大学教育人工智能研究院</span>
-                </div>
-            </div>
+    <section id="personal">
+        <h2>个人简介</h2>
+        <p>周德青，教育学博士研究生，就读于华南师范大学教育人工智能研究院，主要关注教育人工智能应用、现代远程教育、教育大数据等方面研究。主持1项江苏省研究生科研创新项目，参与多项国家社会科学基金项目、广东省哲学社会科学项目、广东省教育厅委托课题，发表期刊16篇、会议论文9篇，授权国家发明专利1项，获批政策专报1项，参与著作撰写2本。</p>
+        
+        <div class="highlight">
+            <p>其中本人一作、通讯或导师一作本人二作的CSSCI/SSCI共10篇，包括《中国电化教育》《电化教育研究》《开放教育研究》《现代远程教育研究》《中国远程教育》《现代教育技术》《Asia Pacific Journal of Education》等。获得国家级奖学金、国家级竞赛一等奖、省级基础教育成果奖、校级"三好学生"、校级"优秀研究生"、校级人文社科博士"十佳优秀学术论文"等奖。</p>
         </div>
     </section>
 
-    <div class="container">
-        <!-- 基本信息 -->
-        <section id="basic-info">
-            <h2>基本信息</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>个人信息</h3>
-                    <p><strong>出生年月：</strong>1996.08</p>
-                    <p><strong>家庭住址：</strong>四川 成都</p>
-                    <p><strong>导师：</strong>穆肃 教授</p>
-                </div>
-                <div class="card">
-                    <h3>求职意向</h3>
-                    <p>高校教师 / 研究员 / 编辑</p>
-                </div>
-                <div class="card">
-                    <h3>研究方向</h3>
-                    <p>教育人工智能应用、现代远程教育、教育大数据</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 教育背景 -->
-        <section id="education">
-            <h2>教育背景</h2>
-            <div class="card">
-                <div class="education-item">
-                    <div class="edu-period">2022.09-2026.06</div>
-                    <div class="edu-school">华南师范大学（教育学排名：A、双一流建设高校、211大学）</div>
-                    <div class="edu-major">教育技术学 教育学博士</div>
-                    <p><strong>导师：</strong>穆肃 教授（华南师范大学教育人工智能研究院副院长）</p>
-                </div>
-                <div class="education-item">
-                    <div class="edu-period">2019.09-2022.06</div>
-                    <div class="edu-school">江苏师范大学（教育学排名：B、江苏高水平大学建设高校）</div>
-                    <div class="edu-major">教育技术学 理学硕士</div>
-                    <p><strong>导师：</strong>杨现民 教授（江苏师范大学党委教师工作部部长、人事处处长）</p>
-                </div>
-                <div class="education-item">
-                    <div class="edu-period">2015.09-2019.06</div>
-                    <div class="edu-school">四川师范大学（教育学排名：B+、国家首批"中西部高校基础能力建设工程"实施高校）</div>
-                    <div class="edu-major">教育技术学 教育学学士</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 科研成果 -->
-        <section id="publications">
-            <h2>科研成果</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>教育人工智能应用</h3>
-                    <div class="publication-item">
-                        <div class="pub-title">人工智能赋能乡村教师高质量发展：内涵、知识框架与行进路径</div>
-                        <div class="pub-details">中国电化教育, 2024, 1作</div>
-                    </div>
-                    <div class="publication-item">
-                        <div class="pub-title">云端课堂教学行为的智能识别与关联分析</div>
-                        <div class="pub-details">现代远程教育研究, 2025, 1作</div>
-                    </div>
-                    <div class="publication-item">
-                        <div class="pub-title">生成人工智能赋能教学设计分析：需求、方法和发展</div>
-                        <div class="pub-details">开放教育研究, 2025, 通讯</div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h3>现代远程教育 & 教育大数据</h3>
-                    <div class="publication-item">
-                        <div class="pub-title">过程数据驱动的在线开放课程质量评价设计</div>
-                        <div class="pub-details">中国远程教育, 2024, 1作</div>
-                    </div>
-                    <div class="publication-item">
-                        <div class="pub-title">我国推进因材施教的政策分析、发展脉络及问题</div>
-                        <div class="pub-details">现代教育技术, 2022, 1作</div>
-                    </div>
-                    <div class="publication-item">
-                        <div class="pub-title">中小学人工智能教材综述—基于 45 本已出版教材的分析</div>
-                        <div class="pub-details">现代教育技术, 2021, 2作</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 科研项目 -->
-        <section id="projects">
-            <h2>科研项目</h2>
-            <div class="card">
-                <div class="project-item">
-                    <div class="project-title">主持：江苏省研究生科研创新项目《基于学习过程数据的在线课程质量评价及优化研究》（2020-2022）</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">参与：国家社会科学基金一般项目《教师数字胜任力伴随式智能测评研究》（2023-2025）</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">参与：国家重点研发计划项目《知识赋能的多空间协同智慧学习关键技术研究与应用示范》（2024-2025）</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">参与：世界高等教育数字化发展报告（2023版）（2024版）（2025版）（2022-2025）</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">参与：中国基础教育大数据发展蓝皮书（2018-2019）（2020-2021）项目（2020-2022）</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 获奖情况 -->
-        <section id="awards">
-            <h2>获奖荣誉</h2>
-            <div class="card">
-                <div class="award-item">
-                    <div class="award-year">2022年</div>
-                    <div>
-                        <p>国家级"一等/二等博士研究生学业奖学金"(四年)</p>
-                        <p>国家级"第二十一届教育技术国际论坛优秀论文"</p>
-                        <p>校级人文社科博士"十佳优秀学术论文"</p>
-                    </div>
-                </div>
-                <div class="award-item">
-                    <div class="award-year">2019年</div>
-                    <div>
-                        <p>国家级"第二十一届教育技术国际论坛最佳论文"</p>
-                        <p>国家级"第五届 iTeach 全国大学生数字化教育应用创新作品展示活动三等奖"</p>
-                        <p>校级"优秀研究生"</p>
-                    </div>
-                </div>
-                <div class="award-item">
-                    <div class="award-year">2018年</div>
-                    <div>
-                        <p>国家级"第二届 iTeach 全国大学生数字化教育应用创新大赛一等奖"</p>
-                    </div>
-                </div>
-                <div class="award-item">
-                    <div class="award-year">2017年</div>
-                    <div>
-                        <p>国家励志奖学金 (全校学生 3%)</p>
-                        <p>校级"三好学生"</p>
-                        <p>校级2次"优秀学生干部"</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 学术报告 -->
-        <section id="presentations">
-            <h2>学术报告</h2>
-            <div class="card">
-                <div class="presentation-item">
-                    <div class="presentation-title">2023 开放与创新教育国际会议（ICOIE），香港都会大学，中国香港</div>
-                    <div class="presentation-details">主题汇报 | 1作</div>
-                </div>
-                <div class="presentation-item">
-                    <div class="presentation-title">2023 中国高等教育学会学习科学研究分会2023学术年会，华中师范大学，湖北武汉</div>
-                    <div class="presentation-details">主题汇报 | 1作</div>
-                </div>
-                <div class="presentation-item">
-                    <div class="presentation-title">2021 第二十届教育技术国际论坛（IFET2021），浙江师范大学，浙江金华</div>
-                    <div class="presentation-details">主题报告 | 1作（最佳论文）</div>
-                </div>
-                <div class="presentation-item">
-                    <div class="presentation-title">2022 第二十一届教育技术国际论坛（IFET2022），沈阳师范大学，辽宁沈阳</div>
-                    <div class="presentation-details">主题报告 | 1作（优秀论文）</div>
-                </div>
-                <div class="presentation-item">
-                    <div class="presentation-title">2025 华南师范大学第八期"GAI赋能未来教师"高级研修班，华南师范大学，广东广州</div>
-                    <div class="presentation-details">主讲人</div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>© 2025 周德青 - 个人简历</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>Dqzhou814@163.com</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-weibo"></i></a>
-                </div>
-            </div>
+    <section id="news">
+        <h2>最新消息</h2>
+        <div class="news-item">
+            <span class="news-date">[2025.10]</span> 论文《县域学校教师数字化教学实施能力的现状与进阶之路》被《中国电化教育》录用 (终审)
         </div>
+        <div class="news-item">
+            <span class="news-date">[2025.09]</span> 论文《乡村振兴背景下双赢式智能化数字支教模式构建与应用》被《教师教育研究》录用 (终审)
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.08]</span> 担任华南师范大学"教育人工智能"微专业二期综合项目汇报会朋辈导师
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.07]</span> 在华南师范大学教育人工智能研究院例会上做"期刊论文撰写的避坑指南"主题报告
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.06]</span> 论文《云端课堂教学行为的智能识别与关联分析》被《现代远程教育研究》录用 (1作)
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.05]</span> 论文《生成人工智能赋能教学设计分析：需求、方法和发展》被《开放教育研究》录用 (通讯)
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.04]</span> 参与撰写的《中小学人工智能课程资源《认识人工智能技术》》完成
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.03]</span> 论文《Teacher-student interactions in blended synchronous classrooms of rural China》被Asia Pacific Journal of Education录用 (通讯)
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.02]</span> 获得国家级"一等博士研究生学业奖学金"
+        </div>
+        <div class="news-item">
+            <span class="news-date">[2025.01]</span> 获得校级人文社科博士"十佳优秀学术论文"奖
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>教育经历</h2>
+        <div class="experience-item">
+            <div class="experience-date">2022.09-2026.06</div>
+            <div><strong>教育技术学（教育学博士）</strong> - 教育人工智能研究院，华南师范大学</div>
+            <div>（教育学排名：A、双一流建设高校、211大学、广东省人民政府与中华人民共和国教育部共建）</div>
+            <div>导师：穆肃教授（华南师范大学教育人工智能研究院副院长）</div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-date">2019.09-2022.06</div>
+            <div><strong>教育技术学（理学硕士）</strong> - 智慧教育学院，江苏师范大学</div>
+            <div>（教育学排名：B、江苏高水平大学建设高校、江苏省人民政府和中华人民共和国教育部共建高校）</div>
+            <div>导师：杨现民教授（江苏师范大学党委教师工作部部长、人事处处长）</div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-date">2015.09-2019.06</div>
+            <div><strong>教育技术学（教育学学士）</strong> - 计算机科学学院，四川师范大学</div>
+            <div>（教育学排名：B+、国家首批"中西部高校基础能力建设工程"实施高校）</div>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>科研成果</h2>
+        <h3>研究方向一：教育人工智能应用</h3>
+        <ul>
+            <li><strong>CSSCI</strong>：2024 人工智能赋能乡村教师高质量发展：内涵、知识框架与行进路径 中国电化教育 1作</li>
+            <li><strong>CSSCI</strong>：2025 云端课堂教学行为的智能识别与关联分析 现代远程教育研究 1作</li>
+            <li><strong>CSSCI</strong>：2025 生成人工智能赋能教学设计分析：需求、方法和发展 开放教育研究 通讯</li>
+            <li><strong>SSCI</strong>：2025 Teacher-student interactions in blended synchronous classrooms of rural China Asia Pacific Journal of Education JCR Q2 通讯</li>
+            <li><strong>国家专利</strong>：2024 一种课堂教学行为分析方法、装置及计算机可读存储介质 国家发明专利 2作(导1)</li>
+        </ul>
+        
+        <h3>研究方向二：现代远程教育</h3>
+        <ul>
+            <li><strong>CSSCI</strong>：2024 过程数据驱动的在线开放课程质量评价设计 中国远程教育 1作</li>
+            <li><strong>CSSCI</strong>：2021 在线开放课程的学习者评价数据分析框架研究 现代教育技术 1作</li>
+            <li><strong>普刊</strong>：2024 数字化转型视域下乡村教育服务体系架构研究 中国教育信息化 通讯</li>
+        </ul>
+        
+        <h3>研究方向三：教育大数据</h3>
+        <ul>
+            <li><strong>CSSCI</strong>：2022 我国推进因材施教的政策分析、发展脉络及问题 现代教育技术 1作</li>
+            <li><strong>CSSCI</strong>：2021 中小学人工智能教材综述—基于 45 本已出版教材的分析 现代教育技术 2作</li>
+            <li><strong>著作</strong>：中国基础教育大数据 2020-2021《走向数据驱动的规模化因材施教》科学出版社(主要贡献者) 4/28</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>科研项目</h2>
+        <ul>
+            <li><strong>主持</strong>：江苏省研究生科研创新项目《基于学习过程数据的在线课程质量评价及优化研究》（2020-2022）</li>
+            <li><strong>参与</strong>：国家社会科学基金一般项目《教师数字胜任力伴随式智能测评研究》（2023-2025）</li>
+            <li><strong>参与</strong>：国家重点研发计划项目《知识赋能的多空间协同智慧学习关键技术研究与应用示范》（2024-2025）</li>
+            <li><strong>参与</strong>：世界高等教育数字化发展报告（2023版）（2024版）（2025版）（2022-2025）</li>
+            <li><strong>参与</strong>：中国基础教育大数据发展蓝皮书（2018-2019）（2020-2021）项目（2020-2022）</li>
+            <li><strong>参与</strong>：广东省哲学社会科学一般项目《数字化转型视域下乡村教育服务实施模式的研究》（2022-2024）</li>
+        </ul>
+    </section>
+
+    <section id="awards">
+        <h2>荣誉获奖</h2>
+        <ul>
+            <li>国家级"一等/二等博士研究生学业奖学金"（四年）</li>
+            <li>国家级"第二十一届教育技术国际论坛优秀论文"</li>
+            <li>校级人文社科博士"十佳优秀学术论文"</li>
+            <li>校级数学成果奖（基础教育类）一等奖</li>
+            <li>国家级"第二十一届教育技术国际论坛最佳论文"</li>
+            <li>国家级"第五届 iTeach 全国大学生数字化教育应用创新作品展示活动三等奖"</li>
+            <li>国家级"第二届 iTeach 全国大学生数字化教育应用创新大赛一等奖"</li>
+            <li>国家励志奖学金（全校学生 3%）</li>
+            <li>校级"三好学生"、校级"优秀研究生"、院级"科研标兵"</li>
+        </ul>
+    </section>
+
+    <section id="presentations">
+        <h2>学术报告</h2>
+        <ul>
+            <li>2023 开放与创新教育国际会议（ICOIE），香港都会大学，中国香港（主题汇报）1作</li>
+            <li>2023 中国高等教育学会学习科学研究分会2023学术年会，华中师范大学，湖北武汉（主题汇报）1作</li>
+            <li>2021 第二十届教育技术国际论坛（IFET2021），浙江师范大学，浙江金华（主题报告）1作（最佳论文）</li>
+            <li>2022 第二十一届教育技术国际论坛（IFET2022），沈阳师范大学，辽宁沈阳（主题报告）1作（优秀论文）</li>
+            <li>2025 华南师范大学第八期"GAI赋能未来教师"高级研修班，华南师范大学，广东广州（主讲人）</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 周德青 - 个人简历 | 最后更新: 2025年10月</p>
     </footer>
 </body>
 </html>
