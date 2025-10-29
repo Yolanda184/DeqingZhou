@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>周德青 - 个人网站</title>
+    <title>周德青 - 教育技术学博士 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* 全局样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-        }
-        
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -21,6 +15,14 @@
             --dark-color: #34495e;
             --text-color: #333;
             --light-text: #f8f9fa;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
         html {
@@ -41,7 +43,7 @@
         }
         
         section {
-            padding: 80px 0;
+            padding: var(--section-padding);
         }
         
         h1, h2, h3, h4 {
@@ -242,7 +244,7 @@
             margin-bottom: 5px;
         }
         
-        /* 学术成果 */
+        /* 科研成果 */
         .publications {
             display: flex;
             flex-direction: column;
@@ -319,54 +321,28 @@
             margin-bottom: 10px;
         }
         
-        /* 个人技能 */
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* 学术报告 */
+        .presentations {
+            display: flex;
+            flex-direction: column;
             gap: 20px;
         }
         
-        .skill-category {
+        .presentation-item {
             background-color: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .skill-category h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            text-align: center;
+        .presentation-title {
+            font-weight: 600;
+            margin-bottom: 10px;
         }
         
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .skill-list li:last-child {
-            border-bottom: none;
-        }
-        
-        /* 硕士论文 */
-        .thesis-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .research-item {
-            margin-bottom: 30px;
-        }
-        
-        .research-item h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
+        .presentation-details {
+            color: var(--dark-color);
+            font-style: italic;
         }
         
         /* 页脚 */
@@ -439,11 +415,10 @@
                 <ul class="nav-links">
                     <li><a href="#home">首页</a></li>
                     <li><a href="#education">教育背景</a></li>
-                    <li><a href="#publications">学术成果</a></li>
+                    <li><a href="#publications">科研成果</a></li>
                     <li><a href="#projects">科研项目</a></li>
-                    <li><a href="#awards">获奖情况</a></li>
-                    <li><a href="#skills">个人技能</a></li>
-                    <li><a href="#thesis">硕士论文</a></li>
+                    <li><a href="#awards">获奖荣誉</a></li>
+                    <li><a href="#presentations">学术报告</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -458,20 +433,20 @@
     <section id="home">
         <div class="container">
             <h1>周德青</h1>
-            <h2>教育技术学硕士研究生</h2>
-            <p>专注于教育技术、数据驱动的教育评价、人工智能教育应用等领域的研究与实践</p>
+            <h2>教育技术学博士研究生</h2>
+            <p>专注于教育人工智能应用、现代远程教育、教育大数据等领域的研究与实践</p>
             <div class="contact-info">
                 <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>1234567891011</span>
-                </div>
-                <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>2457709305@qq.com</span>
+                    <span>Dqzhou814@163.com</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>四川达州</span>
+                    <span>四川 成都</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>华南师范大学教育人工智能研究院</span>
                 </div>
             </div>
         </div>
@@ -485,13 +460,16 @@
                 <div class="info-card">
                     <h3>个人信息</h3>
                     <p><strong>出生年月：</strong>1996.08</p>
-                    <p><strong>籍贯：</strong>四川达州</p>
-                    <p><strong>政治面貌：</strong>共青团员</p>
+                    <p><strong>家庭住址：</strong>四川 成都</p>
+                    <p><strong>导师：</strong>穆肃 教授</p>
                 </div>
                 <div class="info-card">
-                    <h3>教育信息</h3>
-                    <p><strong>导师：</strong>杨现民</p>
-                    <p><strong>现任职务：</strong>院研究生会副主席</p>
+                    <h3>求职意向</h3>
+                    <p>高校教师 / 研究员 / 编辑</p>
+                </div>
+                <div class="info-card">
+                    <h3>研究方向</h3>
+                    <p>教育人工智能应用、现代远程教育、教育大数据</p>
                 </div>
             </div>
         </div>
@@ -503,32 +481,52 @@
             <h2>教育背景</h2>
             <div class="education">
                 <div class="edu-item">
+                    <div class="edu-period">2022.09-2026.06</div>
+                    <div class="edu-school">华南师范大学（教育学排名：A、双一流建设高校、211大学）</div>
+                    <div class="edu-major">教育技术学 教育学博士</div>
+                    <p><strong>导师：</strong>穆肃 教授（华南师范大学教育人工智能研究院副院长）</p>
+                </div>
+                <div class="edu-item">
                     <div class="edu-period">2019.09-2022.06</div>
-                    <div class="edu-school">江苏师范大学</div>
-                    <div class="edu-major">教育技术学 硕士研究生</div>
+                    <div class="edu-school">江苏师范大学（教育学排名：B、江苏高水平大学建设高校）</div>
+                    <div class="edu-major">教育技术学 理学硕士</div>
+                    <p><strong>导师：</strong>杨现民 教授（江苏师范大学党委教师工作部部长、人事处处长）</p>
                 </div>
                 <div class="edu-item">
                     <div class="edu-period">2015.09-2019.06</div>
-                    <div class="edu-school">四川师范大学</div>
-                    <div class="edu-major">教育技术学 本科</div>
+                    <div class="edu-school">四川师范大学（教育学排名：B+、国家首批"中西部高校基础能力建设工程"实施高校）</div>
+                    <div class="edu-major">教育技术学 教育学学士</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 学术成果 -->
+    <!-- 科研成果 -->
     <section id="publications">
         <div class="container">
-            <h2>学术成果</h2>
+            <h2>科研成果</h2>
             <div class="publications">
                 <div class="pub-item">
-                    <div class="pub-title">周德青, 杨现民, 李新.在线开放课程的学习者评价数据分析框架研究——以"中小学教师数据素养"在线开放课程为例[J].现代教育技术, 2021, 31(08). (CSSCI)</div>
+                    <div class="pub-title">研究方向一：教育人工智能应用</div>
+                    <p><strong>CSSCI：</strong>2024 人工智能赋能乡村教师高质量发展：内涵、知识框架与行进路径 中国电化教育 1作</p>
+                    <p><strong>CSSCI：</strong>2025 云端课堂教学行为的智能识别与关联分析 现代远程教育研究 1作</p>
+                    <p><strong>CSSCI：</strong>2025 生成人工智能赋能教学设计分析：需求、方法和发展 开放教育研究 通讯</p>
+                    <p><strong>SSCI：</strong>2025 Teacher-student interactions in blended synchronous classrooms of rural China Asia Pacific Journal of Education JCR Q2 通讯</p>
+                    <p><strong>国家专利：</strong>2024 一种课堂教学行为分析方法、装置及计算机可读存储介质 国家发明专利 2作(导1)</p>
                 </div>
+                
                 <div class="pub-item">
-                    <div class="pub-title">王东丽, 周德青, 王亚如, 杨现民.中小学人工智能教材综述——基于 45 本已出版教材的分析[J].现代教育技术, 2021, 31(02). (CSSCI)</div>
+                    <div class="pub-title">研究方向二：现代远程教育</div>
+                    <p><strong>CSSCI：</strong>2024 过程数据驱动的在线开放课程质量评价设计 中国远程教育 1作</p>
+                    <p><strong>CSSCI：</strong>2021 在线开放课程的学习者评价数据分析框架研究 现代教育技术 1作</p>
+                    <p><strong>普刊：</strong>2024 数字化转型视域下乡村教育服务体系架构研究 中国教育信息化 通讯</p>
                 </div>
+                
                 <div class="pub-item">
-                    <div class="pub-title">张瑶, 杨现民, 周德青.国内教育治理研究:主题变与前沿趋势[J].现代教育技术, 2021, 31(11):20-27. (CSSCI)</div>
+                    <div class="pub-title">研究方向三：教育大数据</div>
+                    <p><strong>CSSCI：</strong>2022 我国推进因材施教的政策分析、发展脉络及问题 现代教育技术 1作</p>
+                    <p><strong>CSSCI：</strong>2021 中小学人工智能教材综述—基于 45 本已出版教材的分析 现代教育技术 2作</p>
+                    <p><strong>著作：</strong>中国基础教育大数据 2020-2021《走向数据驱动的规模化因材施教》科学出版社(主要贡献者) 4/28</p>
                 </div>
             </div>
         </div>
@@ -539,74 +537,28 @@
         <div class="container">
             <h2>科研项目</h2>
             <div class="projects">
-                <!-- 项目1 -->
                 <div class="project-card">
-                    <div class="project-period">2021.05 至今</div>
-                    <div class="project-title">核心参与中国教育装备行业蓝皮书（2021 版）项目</div>
-                    <p>主要工作：调研教育信息化研究的新装备、新应用；负责撰写《教育信息化 2020 年度发展报告》中"五、教育信息化装备的研制与应用"，从德育、智育、体育、美育、劳育五方面阐述教育装备信息化的新进展。</p>
+                    <div class="project-title">主持：江苏省研究生科研创新项目《基于学习过程数据的在线课程质量评价及优化研究》（2020-2022）</div>
                 </div>
                 
-                <!-- 项目2 -->
                 <div class="project-card">
-                    <div class="project-period">2021.04 至今</div>
-                    <div class="project-title">核心参与徐州市第三十四中学人工智能课程建设项目</div>
-                    <p>主要工作：调研中小学人工智能教材；梳理初中人工智能教育的知识点、能力点和素养点；负责撰写《初中人工智能教材》中"第六章 自然语言处理技术"。</p>
+                    <div class="project-title">参与：国家社会科学基金一般项目《教师数字胜任力伴随式智能测评研究》（2023-2025）</div>
                 </div>
                 
-                <!-- 项目3 -->
                 <div class="project-card">
-                    <div class="project-period">2020.11 至今</div>
-                    <div class="project-title">核心参与中国基础教育大数据发展蓝皮书（2020-2021）项目</div>
-                    <p>主要工作：调研、分析中国科技成就相关政策；负责撰写第二章 2.3 中国科技成就政策分析、第三章 3.2 规模化因材施教面临的突出问题以及《智能时代大规模因材施教：政策分析、现实挑战与路径优化》文章。</p>
+                    <div class="project-title">参与：国家重点研发计划项目《知识赋能的多空间协同智慧学习关键技术研究与应用示范》（2024-2025）</div>
                 </div>
                 
-                <!-- 项目4 -->
                 <div class="project-card">
-                    <div class="project-period">2020.07-2020.10</div>
-                    <div class="project-title">参与中国基础教育大数据发展蓝皮书（2018-2019）项目</div>
-                    <p>主要工作：调研、整理"附录 1 中国教育大数据重要事件"；参与撰写《中国基础教育大数据发展蓝皮书（2018-2019）》中"4.5 数据驱动教育公共服务供给""4.6 数据驱动教育管理事务—网通办"。</p>
+                    <div class="project-title">参与：世界高等教育数字化发展报告（2023版）（2024版）（2025版）（2022-2025）</div>
                 </div>
                 
-                <!-- 项目5 -->
                 <div class="project-card">
-                    <div class="project-period">2020.05-2020.09</div>
-                    <div class="project-title">参与中国教育装备行业蓝皮书（2020 版）项目</div>
-                    <p>主要工作：调研 2019 年教育信息化研究的新课题、新成果、新技术、新装备；撰写《2019 年教育信息化发展分析》中"四、教育信息化研究新课题、新理论及新成果""五、教育信息化新技术、新装备的建设与应用"。</p>
+                    <div class="project-title">参与：中国基础教育大数据发展蓝皮书（2018-2019）（2020-2021）项目（2020-2022）</div>
                 </div>
                 
-                <!-- 项目6 -->
                 <div class="project-card">
-                    <div class="project-period">2020.04 至今</div>
-                    <div class="project-title">主持《基于学习过程数据的在线课程质量评价及优化研究》江苏省研究生科研创新项目</div>
-                    <p>主要工作：调研学习过程数据的内涵、类别；调研在线课程质量评价的指标、方法、技术等；并以《在线开放课程的学习者评价数据分析框架研究——以"中小学教师数据素养"在线开放课程为例》一文顺利结束。</p>
-                </div>
-                
-                <!-- 项目7 -->
-                <div class="project-card">
-                    <div class="project-period">2020.03-2020.06</div>
-                    <div class="project-title">核心参与徐州市基础教育大数据项目</div>
-                    <p>主要工作：撰写徐州市中小学教师数据素养现状调研报告；调研大数据相关的国家标准和团体标准、大数据技术参考模型；主持研制、撰写《徐州市教育大数据基础框架标准》。</p>
-                </div>
-                
-                <!-- 项目8 -->
-                <div class="project-card">
-                    <div class="project-period">2019.11-2020.01</div>
-                    <div class="project-title">核心参与青少年编程技术、青少年机器人技术等级教育规范项目</div>
-                    <p>主要工作：调研青少年机器人技术、编程能力等级考试标准；研讨、确定青少年编程教育、机器人教育的知识大纲；作为主要起草人参与撰写《青少年编程技术等级教育规范》、《青少年机器人技术等级教育规范》。</p>
-                </div>
-                
-                <!-- 项目9 -->
-                <div class="project-card">
-                    <div class="project-period">2019.09 至今</div>
-                    <div class="project-title">核心参与中国大学 MOOC《中小学教师数据素养》项目</div>
-                    <p>主要工作：制作微课；担任课程助教，参与课程的管理与运营，为学习者提供学习支持服务。</p>
-                </div>
-                
-                <!-- 项目10 -->
-                <div class="project-card">
-                    <div class="project-period">2016.10-2017.04</div>
-                    <div class="project-title">主持《具有 USB 接口的温度记录仪》计算机科学学院大学生科研创新项目</div>
-                    <p>主要工作：实现 51 单片机与温湿度传感器的串口通信；编写显示温湿度的可视化窗口。</p>
+                    <div class="project-title">参与：广东省哲学社会科学一般项目《数字化转型视域下乡村教育服务实施模式的研究》（2022-2024）</div>
                 </div>
             </div>
         </div>
@@ -615,117 +567,65 @@
     <!-- 获奖情况 -->
     <section id="awards">
         <div class="container">
-            <h2>获奖情况</h2>
+            <h2>获奖荣誉</h2>
             <div class="awards">
-                <!-- 获奖项 -->
                 <div class="award-item">
-                    <div class="award-year">2021年</div>
-                    <p>第二十届教育技术国际论坛最佳论文</p>
-                    <p>iTeach全国大学生数字化教育应用创新作品展示活动三等奖</p>
-                    <p>校级"二等研究生学业奖学金"</p>
-                    <p>校级"优秀研究生"称号</p>
-                    <p>院级"优秀研究生干部"称号</p>
-                </div>
-                
-                <div class="award-item">
-                    <div class="award-year">2020年</div>
-                    <p>校级"二等研究生学业奖学金"</p>
+                    <div class="award-year">2022年</div>
+                    <p>国家级"一等/二等博士研究生学业奖学金"(四年)</p>
+                    <p>国家级"第二十一届教育技术国际论坛优秀论文"</p>
+                    <p>校级人文社科博士"十佳优秀学术论文"</p>
                 </div>
                 
                 <div class="award-item">
                     <div class="award-year">2019年</div>
-                    <p>全国大学生英语六级（CET-6）</p>
-                    <p>校级"二等研究生学业奖学金"</p>
-                    <p>第三届iTeach全国大学生数字化教育应用创新大赛三等奖</p>
+                    <p>国家级"第二十一届教育技术国际论坛最佳论文"</p>
+                    <p>国家级"第五届 iTeach 全国大学生数字化教育应用创新作品展示活动三等奖"</p>
+                    <p>校级"优秀研究生"</p>
                 </div>
                 
                 <div class="award-item">
                     <div class="award-year">2018年</div>
-                    <p>第二届iTeach全国大学生数字化教育应用创新大赛一等奖</p>
+                    <p>国家级"第二届 iTeach 全国大学生数字化教育应用创新大赛一等奖"</p>
                 </div>
                 
                 <div class="award-item">
                     <div class="award-year">2017年</div>
-                    <p>校级"学习优秀二等奖学金"（全校学生5%）</p>
-                    <p>校级"三好学生"称号（全校学生3%）</p>
-                    <p>校级2次"优秀学生干部"称号（全校学生5%）</p>
-                    <p>校级2次"社会工作奖学金"</p>
-                    <p>国家励志奖学金（全校学生3%）</p>
-                </div>
-                
-                <div class="award-item">
-                    <div class="award-year">2016年</div>
-                    <p>全国大学生英语四级（CET-4）</p>
+                    <p>国家励志奖学金 (全校学生 3%)</p>
+                    <p>校级"三好学生"</p>
+                    <p>校级2次"优秀学生干部"</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 个人技能 -->
-    <section id="skills">
+    <!-- 学术报告 -->
+    <section id="presentations">
         <div class="container">
-            <h2>个人技能</h2>
-            <div class="skills">
-                <div class="skill-category">
-                    <h3>设计软件</h3>
-                    <ul class="skill-list">
-                        <li>Adobe Photoshop</li>
-                        <li>Adobe Premiere Pro</li>
-                        <li>Adobe After Effects</li>
-                        <li>Adobe Audition</li>
-                        <li>CorelDRAW</li>
-                        <li>Flash</li>
-                        <li>Maya</li>
-                    </ul>
+            <h2>学术报告</h2>
+            <div class="presentations">
+                <div class="presentation-item">
+                    <div class="presentation-title">2023 开放与创新教育国际会议（ICOIE），香港都会大学，中国香港</div>
+                    <div class="presentation-details">主题汇报 | 1作</div>
                 </div>
                 
-                <div class="skill-category">
-                    <h3>数据分析工具</h3>
-                    <ul class="skill-list">
-                        <li>SPSS Statistics</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Sql server 2008</li>
-                        <li>Citespace</li>
-                        <li>UCINET</li>
-                        <li>ROST CM6</li>
-                        <li>八爪鱼采集器</li>
-                    </ul>
+                <div class="presentation-item">
+                    <div class="presentation-title">2023 中国高等教育学会学习科学研究分会2023学术年会，华中师范大学，湖北武汉</div>
+                    <div class="presentation-details">主题汇报 | 1作</div>
                 </div>
                 
-                <div class="skill-category">
-                    <h3>编程与开发</h3>
-                    <ul class="skill-list">
-                        <li>Scratch</li>
-                        <li>APP Inventer</li>
-                        <li>Unity3D</li>
-                        <li>Eclipse</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 硕士论文 -->
-    <section id="thesis">
-        <div class="container">
-            <h2>硕士论文</h2>
-            <div class="thesis-content">
-                <h3>论文题目：基于学习过程数据的在线开放课程质量评价研究</h3>
-                
-                <div class="research-item">
-                    <h3>研究内容：</h3>
-                    <p><strong>1. 基于学习过程数据的在线开放课程质量评价基础框架构建</strong></p>
-                    <p>构建基于学习过程数据的在线开放课程质量评价基础框架旨在更好地指导在线开放课程质量评价指标体系的设计与实践。研究从理论角度分析评价在线开放课程质量的所需注意的因素与关键点，梳理开展在线开放课程质量评价的基本条件，剖析基于学习过程数据评价在线开放课程的技术、机制、环境，为后续评价在线开放课程质量提供可信有力的理论支撑框架。研究主要涉及用户体验理论和证据中心理论，结合各理论的主要观点，关注学习者自身感受和学习需求，基于多元数据的驱动，新一代智能技术的支持，构建基于学习过程数据的在线开放课程质量评价的基础框架。该框架包含学习过程数据采集、学习过程数据映射、学习过程数据分析以及课程质量层次计算四大系统，包含数据生成、数据采集、数据输入、数据映射、数据预处理、数据分析、结果输出、策略提出八大数据运行环节。</p>
+                <div class="presentation-item">
+                    <div class="presentation-title">2021 第二十届教育技术国际论坛（IFET2021），浙江师范大学，浙江金华</div>
+                    <div class="presentation-details">主题报告 | 1作（最佳论文）</div>
                 </div>
                 
-                <div class="research-item">
-                    <p><strong>2. 基于学习过程数据的在线开放课程质量评价指标体系设计</strong></p>
-                    <p>研究基于学习过程数据的在线开放课程质量评价基础框架的指导，借鉴在线学习评价指标体系研究与数据驱动的远程学习学习投入评价、网络环境下有效学习评价等研究，根据以学习者为中心、重视课程学习体验、关注课程学习过程三个指标体系构建原则，初步设计了包含认知、行为、情感三个层次的基于学习过程数据的在线课程质量评价指标体系，并运用层次分析法确定各级指标权重。</p>
+                <div class="presentation-item">
+                    <div class="presentation-title">2022 第二十一届教育技术国际论坛（IFET2022），沈阳师范大学，辽宁沈阳</div>
+                    <div class="presentation-details">主题报告 | 1作（优秀论文）</div>
                 </div>
                 
-                <div class="research-item">
-                    <p><strong>3. 基于学习过程数据的在线开放课程质量评价实践与效果分析</strong></p>
-                    <p>研究选取江苏师范大学杨明民教授主持开设的在线开放课程——"中小学教师数据素养"（案例课程）为实践对象，来探究基于学习过程数据的在线开放课程质量评价框架与指标的可信性与实施效果。首先，将案例课程第一期中学生的学习者学习过程数据应用于基于学习过程数据的在线开放课程质量评价基础框架和指标体系；其次，根据运行效果，针对性的提出在线开放课程质量提升策略，最后，根据运行效果修正基础框架。</p>
+                <div class="presentation-item">
+                    <div class="presentation-title">2025 华南师范大学第八期"GAI赋能未来教师"高级研修班，华南师范大学，广东广州</div>
+                    <div class="presentation-details">主讲人</div>
                 </div>
             </div>
         </div>
@@ -735,15 +635,11 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>© 2023 周德青 - 个人网站</p>
+                <p>© 2025 周德青 - 个人简历</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>18482031595</span>
-                    </div>
-                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>2457709305@qq.com</span>
+                        <span>Dqzhou814@163.com</span>
                     </div>
                 </div>
                 <div class="social-links">
@@ -783,6 +679,3 @@
     </script>
 </body>
 </html>
-
-
-
